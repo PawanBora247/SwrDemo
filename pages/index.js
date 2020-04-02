@@ -5,6 +5,7 @@ import useSWR from 'swr';
 
 function fetcher(url) {
   return fetch(url, {
+  mode: 'cors',
   header: {
     'Access-Control-Allow-Origin':'*',
   }}).then(r => r.json());
