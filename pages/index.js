@@ -4,7 +4,10 @@ import fetch from 'isomorphic-unfetch';
 import useSWR from 'swr';
 
 function fetcher(url) {
-  return fetch(url).then(r => r.json());
+  return fetch(url, {
+  header: {
+    'Access-Control-Allow-Origin':'*',
+  }}).then(r => r.json());
 }
 
 export default function Index() {
